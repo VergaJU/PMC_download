@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "PMC_download"
+version = "0.1.0"
+description = "Rank and download articles from PMC"
+authors = [
+    { name="Jacopo Umberto Verga"},
+    { name= "Karen Guerrero Vazquez"}
+]
+requires-python = ">=3.8"
+readme = "README.md"
+license = { file="LICENSE" }
+dependencies = [
+    "biopython",
+    "argparse",
+    "pandas",
+    "numpy",
+    "requests"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/VergaJU/PMC_download"
