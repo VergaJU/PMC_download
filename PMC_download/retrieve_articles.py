@@ -156,7 +156,7 @@ class PapersDownloader:
 
 
     @classmethod
-    def get_articles_metrics(cls, query:str, db:str="pmc", retmax=None,**kwargs)->Dict:
+    def get_articles_metrics(cls, query:str, db:str="pmc", max_articles=None,**kwargs)->Dict:
         """
         Get metrics for articles based on the search query.
         
@@ -167,10 +167,10 @@ class PapersDownloader:
         Returns:
             Dict: A dictionary of article metrics.
         """
-        if retmax is None:
+        if max_articles is None:
             count = cls.get_total_count(query=query, db=db)
         else:
-            count = retmax
+            count = max_articles
         pmc_ids=cls.get_pmc_ids(query=query, retstart=0, retmax=count, db=db)
         article_ranking=[i for i in np.linspace(1,0, count)]
         root = cls.get_articles_info(id_list=pmc_ids, db=db)
